@@ -1,4 +1,5 @@
-import { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const pharmacistSchema = new Schema(
   {
@@ -11,6 +12,9 @@ const pharmacistSchema = new Schema(
     userName: {
       type: String,
     },
+    email: {
+      type: String,
+    },
     mobileNumber: {
       type: String,
     },
@@ -18,7 +22,7 @@ const pharmacistSchema = new Schema(
       type: String,
     },
   },
-  { collation: "phamacists" }
+  { collection: "pharmacists" }
 );
 
-module.exports = ("Phamacist", pharmacistSchema);
+module.exports = model("Pharmacist", pharmacistSchema);

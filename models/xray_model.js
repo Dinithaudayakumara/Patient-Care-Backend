@@ -1,4 +1,5 @@
-import { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const xraySchema = new Schema(
   {
@@ -6,7 +7,7 @@ const xraySchema = new Schema(
       type: String,
     },
   },
-  { collation: "xrays" }
+  { collection: "xrays" }
 );
 
 module.exports = model("Xray", xraySchema);

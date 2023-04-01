@@ -1,4 +1,5 @@
-import { Schema, model } from "mongoose";
+const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const doctorSchema = new Schema(
   {
@@ -24,7 +25,7 @@ const doctorSchema = new Schema(
       type: String,
     },
   },
-  { collation: "doctors" }
+  { collection: "doctors" }
 );
 
 module.exports = model("Doctor", doctorSchema);
