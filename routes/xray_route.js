@@ -17,4 +17,15 @@ xrayRoute.route("/create").post((req, res) => {
     });
 });
 
+//View data
+xrayRoute.route("/view").get((req, res) => {
+  Xray.find()
+    .then((xray) => {
+      res.status(200).send({ status: "success", xray });
+    })
+    .catch((e) => {
+      res.status(400).send({ status: "failure" });
+    });
+});
+
 module.exports = xrayRoute;

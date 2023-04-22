@@ -18,4 +18,15 @@ diseaseRoute.route("/create").post((req, res) => {
     });
 });
 
+//View data
+diseaseRoute.route("/view").get((req, res) => {
+  Disease.find()
+    .then((disease) => {
+      res.status(200).send({ status: "success", disease });
+    })
+    .catch((e) => {
+      res.status(400).send({ status: "failure" });
+    });
+});
+
 module.exports = diseaseRoute;

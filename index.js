@@ -10,7 +10,7 @@ const reportRoute = require("./routes/report_route");
 const xrayRoute = require("./routes/xray_route");
 
 const app = express();
-const PORT = 5000;
+const PORT = 5004;
 
 mongoose.connect(process.env.con);
 

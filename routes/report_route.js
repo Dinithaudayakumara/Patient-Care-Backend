@@ -22,4 +22,15 @@ reportRoute.route("/create").post((req, res) => {
     });
 });
 
+//View data
+reportRoute.route("/view").get((req, res) => {
+  Report.find()
+    .then((report) => {
+      res.status(200).send({ status: "success", report });
+    })
+    .catch((e) => {
+      res.status(400).send({ status: "failure" });
+    });
+});
+
 module.exports = reportRoute;

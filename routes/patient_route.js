@@ -2,6 +2,7 @@ const express = require("express");
 const patientRoute = express.Router();
 const Patient = require("../models/patient_model");
 
+//Add Data
 patientRoute.route("/create").post((req, res) => {
   const {
     firstName,
@@ -28,6 +29,17 @@ patientRoute.route("/create").post((req, res) => {
     })
     .catch((e) => {
       res, send({ status: faliure });
+    });
+});
+
+//View data
+patientRoute.route("/view").get((req, res) => {
+  Patient.find()
+    .then((patient) => {
+      res.status(200).send({ status: "success", patient });
+    })
+    .catch((e) => {
+      res.status(400).send({ status: "failure" });
     });
 });
 
