@@ -2,15 +2,21 @@ const express = require("express");
 const reportRoute = express.Router();
 const Report = require("../models/report_model");
 
+//Add Data
 reportRoute.route("/create").post((req, res) => {
-  const { patientInformation, doctorDetail, disease, medicalRecord, xRay } =
-    req.body;
-  const report = new Report({
+  const {
     patientInformation,
     doctorDetail,
     disease,
     medicalRecord,
     xRay,
+  } = req.body;
+  const report = new Report({
+    patientInformation,
+    doctorDetail,
+    disease,
+    medicalRecord,
+    xRay
   });
   report
     .save()
@@ -18,9 +24,11 @@ reportRoute.route("/create").post((req, res) => {
       res.send({ status: "success", report });
     })
     .catch((e) => {
-      res, send({ status: faliure });
+      console.log(e)
+      res.send({ status: "faliure" });
     });
 });
+
 
 //View data
 reportRoute.route("/view").get((req, res) => {

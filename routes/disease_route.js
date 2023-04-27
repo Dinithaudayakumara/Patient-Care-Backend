@@ -14,7 +14,7 @@ diseaseRoute.route("/create").post((req, res) => {
       res.send({ status: "success", disease });
     })
     .catch((e) => {
-      res, send({ status: faliure });
+      res.send({ status: faliure });
     });
 });
 

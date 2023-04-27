@@ -13,7 +13,7 @@ xrayRoute.route("/create").post((req, res) => {
       res.send({ status: "success", Xray });
     })
     .catch((e) => {
-      res, send({ status: faliure });
+      res.send({ status: faliure });
     });
 });
 
