@@ -21,7 +21,7 @@ const pharmacistSchema = new Schema(
     password: {
       type: String,
     },
-    Location: {
+    location: {
       type: String,
     },
   },
