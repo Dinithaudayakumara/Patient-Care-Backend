@@ -21,6 +21,9 @@ const pharmacistSchema = new Schema(
     password: {
       type: String,
     },
+    Location: {
+      type: String,
+    },
   },
   { collection: "pharmacists" }
 );

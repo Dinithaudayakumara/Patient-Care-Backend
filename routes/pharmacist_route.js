@@ -4,7 +4,7 @@ const Pharmacist = require("../models/pharmacist_model");
 
 //Add Data
 pharmacistRoute.route("/create").post((req, res) => {
-  const { firstName, lastName, userName, email, mobileNumber, password } =
+  const { firstName, lastName, userName, email, mobileNumber, password, location } =
     req.body;
   const pharmacist = new Pharmacist({
     firstName,
@@ -13,6 +13,7 @@ pharmacistRoute.route("/create").post((req, res) => {
     email,
     mobileNumber,
     password,
+    location,
   });
   pharmacist
     .save()
