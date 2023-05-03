@@ -12,6 +12,7 @@ patientRoute.route("/create").post((req, res) => {
     dateofBath,
     mobileNumber,
     password,
+    time,
   } = req.body;
   const patient = new Patient({
     firstName,
@@ -21,6 +22,7 @@ patientRoute.route("/create").post((req, res) => {
     dateofBath,
     mobileNumber,
     password,
+    time,
   });
   patient
     .save()

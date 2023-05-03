@@ -24,6 +24,9 @@ const patientSchema = new Schema(
     password: {
       type: String,
     },
+    time: {
+      type: String,
+    },
   },
   { collection: "patients" }
 );
