@@ -44,5 +44,17 @@ patientRoute.route("/view").get((req, res) => {
       res.status(400).send({ status: "failure" });
     });
 });
+//update catergory
+patientRoute.route("/update").post((req, res) => {
+  const { patient } = req.body;
+  console.log(patient);
+  Patient.findByIdAndUpdate(patient._id, patient)
+    .then((patient) => {
+      res.status(200).send({ status: "sucess", patient });
+    })
+    .catch((e) => {
+      res.status(400).send({ status: "faliure" });
+    });
+});
 
 module.exports = patientRoute;

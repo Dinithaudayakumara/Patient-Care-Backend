@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const { Schema, model } = require("mongoose");
-const Patient = require("./patient_model")
-const Doctor = require("./doctor_model")
-const Disease = require("./disease_model")
-const Xray = require("./xray_model")
+const Patient = require("./patient_model");
+const Doctor = require("./doctor_model");
+const Disease = require("./disease_model");
+const Xray = require("./xray_model");
 
 const reportSchema = new Schema(
   {

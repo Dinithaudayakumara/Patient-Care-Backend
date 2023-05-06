@@ -4,31 +4,25 @@ const Report = require("../models/report_model");
 
 //Add Data
 reportRoute.route("/create").post((req, res) => {
-  const {
-    patientInformation,
-    doctorDetail,
-    disease,
-    medicalRecord,
-    xRay,
-  } = req.body;
+  const { patientInformation, doctorDetail, disease, medicalRecord, xRay } =
+    req.body;
   const report = new Report({
     patientInformation,
     doctorDetail,
     disease,
     medicalRecord,
-    xRay
+    xRay,
   });
-  report
+  report // Save feedback details
     .save()
     .then((report) => {
       res.send({ status: "success", report });
     })
     .catch((e) => {
-      console.log(e)
+      console.log(e);
       res.send({ status: "faliure" });
     });
 });
-
 
 //View data
 reportRoute.route("/view").get((req, res) => {
