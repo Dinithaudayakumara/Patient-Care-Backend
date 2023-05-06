@@ -8,6 +8,7 @@ const pharmacistRoute = require("./routes/pharmacist_route");
 const diseaseRoute = require("./routes/disease_route");
 const reportRoute = require("./routes/report_route");
 const xrayRoute = require("./routes/xray_route");
+const feedbackRoute = require("./routes/feedback_route");
 
 const app = express();
 const PORT = 5004;
@@ -27,6 +28,7 @@ app.use("/pharmacist", pharmacistRoute);
 app.use("/disease", diseaseRoute);
 app.use("/report", reportRoute);
 app.use("/xray", xrayRoute);
+app.use("/feedback", feedbackRoute);
 
 app.listen(PORT, () => {
   console.log("Server is running on Port:", PORT);
