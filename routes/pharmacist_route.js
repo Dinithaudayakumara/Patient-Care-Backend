@@ -43,4 +43,17 @@ pharmacistRoute.route("/view").get((req, res) => {
     });
 });
 
+//update catergory
+pharmacistRoute.route("/update").post((req, res) => {
+  const { pharmacist } = req.body;
+  console.log(pharmacist);
+  Pharmacist.findByIdAndUpdate(pharmacist._id, pharmacist)
+    .then((pharmacist) => {
+      res.status(200).send({ status: "sucess", pharmacist });
+    })
+    .catch((e) => {
+      res.status(400).send({ status: "faliure" });
+    });
+});
+
 module.exports = pharmacistRoute;

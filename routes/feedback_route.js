@@ -4,11 +4,17 @@ const Feedback = require("../models/feedback_model");
 
 //Add Data
 feedbackRoute.route("/create").post((req, res) => {
-  const { patientID, feedbackDescription, feedbackDateandTime } = req.body;
+  const {
+    patientID,
+    feedbackDescription,
+    feedbackRating,
+    feedbackDateandTime,
+  } = req.body;
 
   const feedback = new Feedback({
     patientID,
     feedbackDescription,
+    feedbackRating,
     feedbackDateandTime,
   });
 
