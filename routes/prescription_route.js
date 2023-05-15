@@ -31,4 +31,20 @@ prescriptionRoute.route("/view").get((req, res) => {
     });
 });
 
+//View all products accoding to catergory ID
+prescriptionRoute.route("/get-precsriptions-by-user-id").post((req, res) => {
+  const { user } = req.body;
+  console.log(user);
+  Prescription.find({ user })
+    .then((prescription) => {
+      res.status(200).send({
+        status: "Success",
+        prescription,
+      });
+    })
+    .catch((e) => {
+      res.status(400).send({ status: "faliure" });
+    });
+});
+
 module.exports = prescriptionRoute;
