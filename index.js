@@ -32,7 +32,7 @@ app.use("/report", reportRoute);
 app.use("/xray", xrayRoute);
 app.use("/feedback", feedbackRoute);
 app.use("/prescription", prescriptionRoute);
-app.use("appointment",appointmentRoute);
+app.use("appointment", appointmentRoute);
 
 app.listen(PORT, () => {
   console.log("Server is running on Port:", PORT);

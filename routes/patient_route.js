@@ -56,5 +56,51 @@ patientRoute.route("/update").post((req, res) => {
       res.status(400).send({ status: "faliure" });
     });
 });
+//sign in
+
+patientRoute.route("/sign-in").post((req, res) => {
+  const { userName, password } = req.body;
+  Patient.findOne({ userName: userName, password: password })
+    .then((patient) => {
+      if (patient) {
+        const {
+          firstName,
+          lastName,
+          userName,
+          email,
+          dateofBath,
+          mobileNumber,
+          password,
+          time,
+        } = patient;
+
+        const sendUser = {
+          firstName,
+          lastName,
+          userName,
+          email,
+          dateofBath,
+          mobileNumber,
+          password,
+          time,
+        };
+
+        res.status(200).send({
+          status: "login-sucess",
+          patient: sendUser,
+        });
+      } else {
+        res
+          .status(401)
+          .send({ status: "User not found", errorMsg: "User not found" });
+      }
+    })
+    .catch((e) => {
+      res.status(400).send({
+        status: "Bad request",
+        errorMsg: "Username or password incorrect",
+      });
+    });
+});
 
 module.exports = patientRoute;
