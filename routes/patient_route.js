@@ -70,7 +70,6 @@ patientRoute.route("/sign-in").post((req, res) => {
           email,
           dateofBath,
           mobileNumber,
-          password,
           time,
         } = patient;
 
@@ -81,7 +80,6 @@ patientRoute.route("/sign-in").post((req, res) => {
           email,
           dateofBath,
           mobileNumber,
-          password,
           time,
         };
 
