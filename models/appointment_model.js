@@ -7,7 +7,7 @@ const appointmentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "patient",
     },
-    Date: {
+    date: {
       type: String,
     },
     doctorDetail: {

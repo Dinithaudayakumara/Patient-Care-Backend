@@ -3,11 +3,11 @@ const appointmentRoute = express.Router();
 const Appointment = require("../models/appointment_model");
 
 appointmentRoute.route("/create").post((req, res) => {
-  const { patientID, Date, doctorDetail } = req.body;
+  const { patientID, date, doctorDetail } = req.body;
 
   const appointment = new Appointment({
     patientID,
-    Date,
+    date,
     doctorDetail,
   });
   appointment
