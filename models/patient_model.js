@@ -15,7 +15,7 @@ const patientSchema = new Schema(
     email: {
       type: String,
     },
-    dateofBath: {
+    dateofBirth: {
       type: String,
     },
     mobileNumber: {
