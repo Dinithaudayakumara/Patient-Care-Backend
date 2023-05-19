@@ -9,7 +9,7 @@ patientRoute.route("/create").post((req, res) => {
     lastName,
     userName,
     email,
-    dateofBirth,
+    dateofBath,
     mobileNumber,
     password,
     time,
@@ -19,7 +19,7 @@ patientRoute.route("/create").post((req, res) => {
     lastName,
     userName,
     email,
-    dateofBirth,
+    dateofBath,
     mobileNumber,
     password,
     time,
@@ -59,26 +59,28 @@ patientRoute.route("/update").post((req, res) => {
 //sign in
 
 patientRoute.route("/sign-in").post((req, res) => {
-  const { userName, password } = req.body;
-  Patient.findOne({ userName: userName, password: password })
+  const { email, password } = req.body;
+  Patient.findOne({ email: email, password: password })
     .then((patient) => {
       if (patient) {
         const {
+          _id,
           firstName,
           lastName,
           userName,
           email,
-          dateofBirth,
+          dateofBath,
           mobileNumber,
           time,
         } = patient;
 
         const sendUser = {
+          _id,
           firstName,
           lastName,
           userName,
           email,
-          dateofBirth,
+          dateofBath,
           mobileNumber,
           time,
         };

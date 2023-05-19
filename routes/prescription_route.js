@@ -36,6 +36,7 @@ prescriptionRoute.route("/get-precsriptions-by-user-id").post((req, res) => {
   const { user } = req.body;
   console.log(user);
   Prescription.find({ user })
+    .populate("doctorDetail")
     .then((prescription) => {
       res.status(200).send({
         status: "Success",

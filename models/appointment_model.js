@@ -7,9 +7,19 @@ const appointmentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "patient",
     },
+    title: {
+      type: String,
+    },
     date: {
       type: String,
     },
+    time: {
+      type: String,
+    },
+    details: {
+      type: String,
+    },
+
     doctorDetail: {
       type: Schema.Types.ObjectId,
       ref: "Doctor",

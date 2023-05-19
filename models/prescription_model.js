@@ -3,12 +3,21 @@ const { Schema, model } = require("mongoose");
 
 const prescriptionSchema = new Schema(
   {
-    description: {
-      type: String,
-    },
     patientID: {
       type: Schema.Types.ObjectId,
       ref: "patient",
+    },
+    description: {
+      type: String,
+    },
+    date: {
+      type: String,
+    },
+    pharmacyName: {
+      type: String,
+    },
+    priscriptions: {
+      type: String,
     },
     doctorDetail: {
       type: Schema.Types.ObjectId,

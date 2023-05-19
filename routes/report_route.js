@@ -35,4 +35,16 @@ reportRoute.route("/view").get((req, res) => {
     });
 });
 
+reportRoute.route("/view-by-user-id").post((req, res) => {
+  const { userId } = req.body;
+  Report.find({ patientInformation: userId })
+    .populate("disease")
+    .then((report) => {
+      res.status(200).send({ status: "success", report });
+    })
+    .catch((e) => {
+      res.status(400).send({ status: "failure" });
+    });
+});
+
 module.exports = reportRoute;
