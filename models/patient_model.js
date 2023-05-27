@@ -27,6 +27,21 @@ const patientSchema = new Schema(
     time: {
       type: String,
     },
+     bloodGroup: {
+      type: String,
+    },
+     weight: {
+      type: String,
+    },
+    height: {
+      type: String,
+    },
+    gender: {
+      type: String,
+    },
+    profileImage: {
+      type: String,
+    },
   },
   { collection: "patients" }
 );
