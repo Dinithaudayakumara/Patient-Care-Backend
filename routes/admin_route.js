@@ -13,10 +13,10 @@ adminRoute.route("/create").post((req, res) => {
   admin
     .save()
     .then((admin) => {
-      res.status(200).send({ status: "success", admin });
+      res.send({ status: "success", admin });
     })
     .catch((e) => {
-      res.status(400).send({ status: "failure" });
+      res.send({ status: "failure" });
     });
 });
 

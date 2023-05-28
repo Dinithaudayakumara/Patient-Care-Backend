@@ -27,10 +27,10 @@ const patientSchema = new Schema(
     time: {
       type: String,
     },
-     bloodGroup: {
+    bloodGroup: {
       type: String,
     },
-     weight: {
+    weight: {
       type: String,
     },
     height: {

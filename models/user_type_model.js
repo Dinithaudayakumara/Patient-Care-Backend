@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const userTypeSchema = new mongoose.Schema(
   {
-    userType: {
+    type: {
       type: String,
     },
   },

@@ -11,7 +11,9 @@ const xrayRoute = require("./routes/xray_route");
 const feedbackRoute = require("./routes/feedback_route");
 const prescriptionRoute = require("./routes/prescription_route");
 const appointmentRoute = require("./routes/appointment_route");
-
+const userTypeRoute = require("./routes/user_type_route");
+const signInRoute = require("./routes/signin_route");
+const adminRoute = require("./routes/admin_route");
 const app = express();
 const PORT = 5004;
 
@@ -33,6 +35,9 @@ app.use("/xray", xrayRoute);
 app.use("/feedback", feedbackRoute);
 app.use("/prescription", prescriptionRoute);
 app.use("/appointment", appointmentRoute);
+app.use("/userType", userTypeRoute);
+app.use("/sign", signInRoute);
+app.use("/admin", adminRoute);
 
 app.listen(PORT, () => {
   console.log("Server is running on Port:", PORT);
