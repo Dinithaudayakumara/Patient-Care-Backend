@@ -23,6 +23,7 @@ signInRoute.route("/sign-in").post((req, res) => {
           status: "login-success",
           token,
           user: {
+            id: doctor._id,
             userName: doctor.userName,
             employeeType: "doctor",
           },
@@ -42,6 +43,7 @@ signInRoute.route("/sign-in").post((req, res) => {
                 status: "login-success",
                 token,
                 user: {
+                  id: pharmacist._id,
                   userName: pharmacist.userName,
                   employeeType: "pharmacist",
                 },
@@ -61,6 +63,7 @@ signInRoute.route("/sign-in").post((req, res) => {
                       status: "login-success",
                       token,
                       user: {
+                        id: admin._id,
                         userName: admin.userName,
                         employeeType: "admin",
                       },
