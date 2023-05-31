@@ -4,31 +4,15 @@ const Doctor = require("../models/doctor_model");
 
 //Add data
 doctorRoute.route("/create").post((req, res) => {
-  const {
-    firstName,
-    lastName,
-    userName,
-    email,
-    mobileNumber,
-    password,
-    specialty,
-  } = req.body;
-  const doctor = new Doctor({
-    firstName,
-    lastName,
-    userName,
-    email,
-    mobileNumber,
-    password,
-    specialty,
-  });
-  doctor
+  const { doctor } = req.body;
+  const newDoctor = new Doctor({ ...doctor });
+  newDoctor //Save user details.
     .save()
     .then((doctor) => {
-      res.status(200).send({ status: "success", doctor });
+      res.send({ status: "success", doctor });
     })
     .catch((e) => {
-      res.status(400).send({ status: "failure" });
+      res.send({ status: "failure" });
     });
 });
 

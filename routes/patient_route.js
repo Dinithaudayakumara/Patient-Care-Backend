@@ -4,37 +4,9 @@ const Patient = require("../models/patient_model");
 
 //Add Data
 patientRoute.route("/create").post((req, res) => {
-  const {
-    firstName,
-    lastName,
-    userName,
-    email,
-    dateofBath,
-    mobileNumber,
-    password,
-    time,
-    bloodGroup,
-    weight,
-    height,
-    gender,
-    profileImage,
-  } = req.body;
-  const patient = new Patient({
-    firstName,
-    lastName,
-    userName,
-    email,
-    dateofBath,
-    mobileNumber,
-    password,
-    time,
-    bloodGroup,
-    weight,
-    height,
-    gender,
-    profileImage,
-  });
-  patient
+  const { patient } = req.body;
+  const newPatient = new Patient({ ...patient });
+  newPatient //Save user details.
     .save()
     .then((patient) => {
       res.send({ status: "success", patient });
